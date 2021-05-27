@@ -41,27 +41,91 @@ class classBalle
 }
 
 
-function createBall()
+
+class classBatte
+{
+    constructor()
     {
-    objBalle = new Array(10);
-    
-    for(nbr=0;nbr<10;nbr++)
-    {
-        objBalle[nbr]= new classBalle(nbr);
+        this.init()
     }
+
+    init()
+    {
+        this.x = 240;
+
+        this.xs = 2;
+    }
+
+    move()
+    {
+        if(this.x < 40 || this.x > 479)
+        {
+            this.xs = this.xs * -1;
+        }
+        this.x = this.x + this.xs;
+
+        document.getElementById("batte").style.left = (this.x - 40) + "px";
+    }
+
+    go()
+    {
+        this.move();
+        this.run = setInterval("objBatte.move();",50);
+    }
+
 
 }
 
 
 
-function init()
+function createNewBatte()
 {
-    document.getElementById("batte").style.left = "200px";
-    document.getElementById("batte").style.top = "420px";
+    newBatte = document.createElement("div");
+    newBatte.id = "batte";
+    newBatte.className = "batte";
+    newBatte.style.left = "240px";
+    newBatte.style.top = "440px";
+    document.getElementById("arene").appendChild(newBatte);
     
-    for(i=0;i<10;i++)
+    
+    objBatte = new classBatte;
+
+    objBatte.go();
+
+}
+
+
+function createNewBalle()
+{
+    for(b=0;b<50;b++)
+    {
+        newBalle = document.createElement("div");
+        newBalle.id = "balle"+b;
+        newBalle.className = "balle";
+        newBalle.style.left = "250 px";
+        newBalle.style.top = "250 px";
+        document.getElementById("arene").appendChild(newBalle);
+
+    }
+
+    objBalle = new Array(50);
+
+    for(b=0;b<50;b++)
+    {
+        objBalle[b]= new classBalle(b);
+    }
+
+    for(i=0;i<50;i++)
     {
         setTimeout("objBalle["+i+"].go()",i*500);
     }
+}
 
+ 
+
+function init()
+{
+    createNewBalle();
+    createNewBatte();  
+    
 }

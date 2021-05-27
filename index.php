@@ -21,21 +21,7 @@
         <div class="brique b4"></div>
         <div class="brique b5"></div>
         <div class="brique b6"></div>
-        <div class="brique b7"></div>
-        
-        <div id="balle0" class="balle"></div>
-        <div id="balle1" class="balle"></div>
-        <div id="balle2" class="balle"></div>
-        <div id="balle3" class="balle"></div>
-        <div id="balle4" class="balle"></div>
-        <div id="balle5" class="balle"></div>
-        <div id="balle6" class="balle"></div>
-        <div id="balle7" class="balle"></div>
-        <div id="balle8" class="balle"></div>
-        <div id="balle9" class="balle"></div>
-        
-        <div id="batte" class="batte"></div>
-        
+        <div class="brique b7"></div>   
     </div>
     
 </body>
