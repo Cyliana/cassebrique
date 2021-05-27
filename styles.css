@@ -1,0 +1,82 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.arene{
+    width: 520px;
+    height:520px;
+    border:1px solid red;
+    margin:0 auto;
+    box-shadow: inset 5px 5px 15px #555555;
+    background-image: url(bg01.jpg);
+    overflow: hidden;
+    position: relative;
+}
+
+.brique{
+    width: 36px;
+    height: 16px;
+    border: 1px solid rgb(160, 159, 159);
+    border-style:outset;
+    box-shadow: 5px 5px 15px;
+    margin:1px;
+    
+}
+
+.balle{
+    width: 15px;
+    height: 15px;
+    border:1px solid #555555;
+    border-radius:10px;
+    background: linear-gradient(142deg, rgba(255,255,255,1) 0%, rgba(85,85,85,1) 100%);
+    box-shadow: 5px 5px 15px,#555555 -1px -1px 5px inset;
+    position:absolute;
+    top:402.5px;
+    left: 232.5px;
+
+}
+
+.batte{
+    width:80px;
+    height: 20px;
+    border: 1px solid #555555;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: #555555 5px 5px 15px ,#555555 -3px -3px 15px inset;
+    position: absolute;
+    top:420px;
+    left:200px;
+}
+
+.b0{
+    background: linear-gradient(135deg, rgb(176, 174, 174) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b1{
+    background: linear-gradient(135deg, rgba(251,255,0,1) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b2{
+    background: linear-gradient(135deg, rgba(255,165,0,1) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b3{
+    background: linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b4{
+    background: linear-gradient(135deg, rgba(255,0,137,1) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b5{
+    background: linear-gradient(135deg, rgba(73,0,255,1) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b6{
+    background: linear-gradient(135deg, rgba(0,255,247,1) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b7{
+    background: linear-gradient(135deg, rgba(10,255,0,1) 0%, rgba(85,85,85,1) 100%);
+}
