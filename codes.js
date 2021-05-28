@@ -78,7 +78,7 @@ class classBatte
 
 
 
-function createNewBatte()
+function createNewBatte() //Fonction gérant la création de la batte ainsi que son instantiation et son lancement
 {
     newBatte = document.createElement("div");
     newBatte.id = "batte";
@@ -95,7 +95,7 @@ function createNewBatte()
 }
 
 
-function createNewBalle()
+function createNewBalle() //Fonction gérant la création des balles ainsi que son instanciation et son lancement
 {
     for(b=0;b<50;b++)
     {
@@ -121,11 +121,55 @@ function createNewBalle()
     }
 }
 
- 
+function createNewMur()
+{
+    let mur; 
+
+    mur  = "_23456712345_";
+    mur += "1_345671234_6";
+    mur += "12_4567123_56";
+    mur += "123_56712_456";
+    mur += "1234_671_3456";
+    mur += "12345_7_23456";
+    mur += "12345_7_23456";
+    mur += "1234_671_3456";
+    mur += "123_56712_456";
+    mur += "12_4567123_56";
+    mur += "1_345671234_6";
+    mur += "_23456712345_";
+    mur += "1_345671234_6";
+    mur += "12_4567123_56";
+    mur += "123_56712_456";
+    mur += "1234_671_3456";
+    mur += "12345_7_23456";
+    mur += "12345_7_23456";
+    mur += "1234_671_3456";
+
+
+    newBrique = new Array(234);
+    i = 0;
+    for(y = 0 ; y < 18 ; y++ )
+    {
+        for(x = 0 ; x < 13 ; x++ )
+        {
+            newBrique[i] = document.createElement("div");
+            newBrique[i].id = "brique" + i;
+            newBrique[i].className = "brique b"+mur.substring(i,i+1);
+            newBrique[i].style.position = "absolute";
+            newBrique[i].style.left = (x * 40) + "px";
+            newBrique[i].style.top =(y * 20) + "px";
+            document.getElementById("arene").appendChild(newBrique[i]);
+            i++;
+        }
+    }    
+}
+    
+
+
 
 function init()
 {
     createNewBalle();
-    createNewBatte();  
-    
+    createNewBatte(); 
+    createNewMur();
 }

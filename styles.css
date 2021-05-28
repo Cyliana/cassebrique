@@ -1,9 +1,11 @@
-*{
+*
+{
     margin:0;
     padding:0;
 }
 
-.arene{
+.arene
+{
     width: 520px;
     height:520px;
     border:1px solid red;
@@ -14,17 +16,9 @@
     position: relative;
 }
 
-.brique{
-    width: 36px;
-    height: 16px;
-    border: 1px solid rgb(160, 159, 159);
-    border-style:outset;
-    box-shadow: 5px 5px 15px;
-    margin:1px;
-    
-}
 
-.balle{
+.balle
+{
     width: 15px;
     height: 15px;
     border:1px solid #555555;
@@ -37,7 +31,8 @@
 
 }
 
-.batte{
+.batte
+{
     width:80px;
     height: 20px;
     border: 1px solid #555555;
@@ -49,34 +44,60 @@
     left:200px;
 }
 
-.b0{
+.brique
+{
+    width: 36px;
+    height: 16px;
+    border: 1px solid rgb(160, 159, 159);
+    border-style:outset;
+    box-shadow: 5px 5px 15px;
+    margin:1px;
+}
+
+.b0
+{
     background: linear-gradient(135deg, rgb(176, 174, 174) 0%, rgba(85,85,85,1) 100%);
 }
 
-.b1{
+.b1
+{
     background: linear-gradient(135deg, rgba(251,255,0,1) 0%, rgba(85,85,85,1) 100%);
 }
 
-.b2{
+.b2
+{
     background: linear-gradient(135deg, rgba(255,165,0,1) 0%, rgba(85,85,85,1) 100%);
 }
 
-.b3{
+.b3
+{
     background: linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(85,85,85,1) 100%);
 }
 
-.b4{
+.b4
+{
     background: linear-gradient(135deg, rgba(255,0,137,1) 0%, rgba(85,85,85,1) 100%);
 }
 
-.b5{
+.b5
+{
     background: linear-gradient(135deg, rgba(73,0,255,1) 0%, rgba(85,85,85,1) 100%);
 }
 
-.b6{
+.b6
+{
     background: linear-gradient(135deg, rgba(0,255,247,1) 0%, rgba(85,85,85,1) 100%);
 }
 
-.b7{
+.b7
+{
     background: linear-gradient(135deg, rgba(10,255,0,1) 0%, rgba(85,85,85,1) 100%);
+}
+
+.b_
+{
+    border: none;
+    border-style:none;
+    box-shadow:none;
+    margin:none;
 }
