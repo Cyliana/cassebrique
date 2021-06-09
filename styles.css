@@ -1,103 +1,151 @@
 *
 {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.arene
+body
 {
-    width: 520px;
-    height:520px;
-    border:1px solid red;
-    margin:0 auto;
-    box-shadow: inset 5px 5px 15px #555555;
-    background-image: url(bg01.jpg);
-    overflow: hidden;
-    position: relative;
+    text-align: center;
 }
 
-
-.balle
+#logo
 {
-    width: 15px;
-    height: 15px;
-    border:1px solid #555555;
-    border-radius:10px;
-    background: linear-gradient(142deg, rgba(255,255,255,1) 0%, rgba(85,85,85,1) 100%);
-    box-shadow: 5px 5px 15px,#555555 -1px -1px 5px inset;
-    position:absolute;
-    top:402.5px;
-    left: 232.5px;
-
-}
-
-.batte
-{
-    width:80px;
-    height: 20px;
-    border: 1px solid #555555;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: #555555 5px 5px 15px ,#555555 -3px -3px 15px inset;
     position: absolute;
-    top:420px;
-    left:200px;
+    margin: auto auto;
+    width: 540px;
+    top: 0px;
+    left: calc(50% - 270px);
+    transition: all 2s ease;
+}
+
+#arene
+{
+    position: absolute;
+    margin: auto auto;
+    top: 240px;
+    left: calc(50% - 260px);
+    width: 0px;
+    height: 0px;
+    box-sizing: content-box;
+    background: url(bg01.jpg);
+    overflow: hidden;
+    border: 1px solid red;
+    box-shadow: 5px 5px 15px #333333 inset;
+    transition: all 2s ease;
+    display: none;
+}
+
+#msg
+{
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    width: 50%;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 128px;
+    font-weight: bold;
+    text-shadow: black 0px 5px 20px, black 0px 0px 5px;
+}
+
+#boutons
+{
+    position: absolute;
+    top: 600px;
+    text-align: center;
+    width: 100%;
+}
+
+#boutons button
+{
+    position: relative;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    bottom: 0px;
 }
 
 .brique
 {
     width: 36px;
     height: 16px;
-    border: 1px solid rgb(160, 159, 159);
-    border-style:outset;
+    margin: 1px;
+    border: 1px solid #999999;
+    border-style: outset;
     box-shadow: 5px 5px 15px;
-    margin:1px;
-}
-
-.b0
-{
-    background: linear-gradient(135deg, rgb(176, 174, 174) 0%, rgba(85,85,85,1) 100%);
-}
-
-.b1
-{
-    background: linear-gradient(135deg, rgba(251,255,0,1) 0%, rgba(85,85,85,1) 100%);
-}
-
-.b2
-{
-    background: linear-gradient(135deg, rgba(255,165,0,1) 0%, rgba(85,85,85,1) 100%);
-}
-
-.b3
-{
-    background: linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(85,85,85,1) 100%);
-}
-
-.b4
-{
-    background: linear-gradient(135deg, rgba(255,0,137,1) 0%, rgba(85,85,85,1) 100%);
-}
-
-.b5
-{
-    background: linear-gradient(135deg, rgba(73,0,255,1) 0%, rgba(85,85,85,1) 100%);
-}
-
-.b6
-{
-    background: linear-gradient(135deg, rgba(0,255,247,1) 0%, rgba(85,85,85,1) 100%);
-}
-
-.b7
-{
-    background: linear-gradient(135deg, rgba(10,255,0,1) 0%, rgba(85,85,85,1) 100%);
 }
 
 .b_
 {
-    border: none;
-    border-style:none;
-    box-shadow:none;
-    margin:none;
+    border: 1px solid transparent;
+    border-style: none;
+    box-shadow: none;
+    background: none;
+}
+
+.b0
+{
+    background: linear-gradient(135deg, #ffffff, #555555);
+}
+
+.b1
+{
+    background: linear-gradient(135deg, #ffff00, #555555);
+}
+
+.b2
+{
+    background: linear-gradient(135deg, #ff7700, #555555);
+}
+
+.b3
+{
+    background: linear-gradient(135deg, #ff0000, #555555);
+}
+
+.b4
+{
+    background: linear-gradient(135deg, #ff00ff, #555555);
+}
+
+.b5
+{
+    background: linear-gradient(135deg, #0000ff, #555555);
+}
+
+.b6
+{
+    background: linear-gradient(135deg, #00ffff, #555555);
+}
+
+.b7
+{
+    background: linear-gradient(135deg, #00ff00, #555555);
+}
+
+.balle
+{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: radial-gradient(at 4px 4px, #ffffff, #333333);
+    box-shadow: 5px 5px 15px, 0px 0px 2px inset;
+    transition: all 0.010 ease;
+}
+
+.batte
+{
+    position: absolute;
+    top: 460px;
+    left: 220px;
+    width: 80px;
+    height: 20px;
+    border-radius: 10px;
+    background: lightgrey;                
+    box-shadow: 5px 5px 15px, 0px -2px 8px inset, 0px 0px 1px inset;
+    transition: all 3 ease;
 }
