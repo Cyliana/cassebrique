@@ -19,23 +19,21 @@ class classJeu
 
     start()
     {
-       console.log(this.name+".start();");
-
-     /* this.arene          = new classArene();
+      
+        this.arene          = new classArene();
         this.arene.parent   = this;
         this.arene.createElement();
         this.arene.open();
 
-        this.arene.mur.loadLevel(this.niveau);
-        this.arene.mur.createWall();
-        this.batte.createElement();*/
-
+        //this.arene.mur.loadLevel(this.niveau);
+        //this.arene.mur.createWall();
+        //this.batte.createElement();
     }
     
 
     quit()
     {
-       btnQuit.onclick = document.location = "https://www.google.fr/";
+       document.location.href= "https://www.google.fr/";
     }
 
     newGame()
@@ -54,3 +52,59 @@ class classJeu
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

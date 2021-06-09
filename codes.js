@@ -28,34 +28,36 @@ class classBoutons
 
     disable()
     {
-        this.element.setAttribute("disabled",true);
+        document.getElementById(this.id).setAttribute("disabled","disable");
     }
 
     enable()
     {
-        this.element.setAttribute("disabled");
+        document.getElementById(this.id).removeAttribute("disabled");
     }
 
 }
-
+ let btnStart;
+ let btnQuit;
+ let jeu;
+ let log;
+ let boutons;
 
 function init()
 {
-    let jeu = new classJeu();
+    jeu = new classJeu();
 
-    let logo = document.createElement("img");
+    logo = document.createElement("img");
     logo.id = "logo";
     logo.setAttribute("src", "logo.svg");
     document.body.appendChild(logo);
 
-
-    let boutons = document.createElement("div");
+    boutons = document.createElement("div");
     boutons.id = "boutons";
     document.getElementById("logo").after(boutons);
 
-
-    let btnStart = new classBoutons("btnStart");
-    let btnQuit  = new classBoutons("btnQuit");
+    btnStart = new classBoutons("btnStart");
+    btnQuit  = new classBoutons("btnQuit");
 
     btnStart.createElement();
     btnQuit.createElement();
