@@ -43,26 +43,27 @@ class classBoutons
  let log;
  let boutons;
 
-function init()
-{
-    jeu = new classJeu();
+ 
+    function init()
+    {
+        jeu = new classJeu();
 
-    logo = document.createElement("img");
-    logo.id = "logo";
-    logo.setAttribute("src", "logo.svg");
-    document.body.appendChild(logo);
+        logo = document.createElement("img");
+        logo.id = "logo";
+        logo.setAttribute("src", "logo.svg");
+        document.body.appendChild(logo);
 
-    boutons = document.createElement("div");
-    boutons.id = "boutons";
-    document.getElementById("logo").after(boutons);
+        boutons = document.createElement("div");
+        boutons.id = "boutons";
+        document.getElementById("logo").after(boutons);
 
-    btnStart = new classBoutons("btnStart");
-    btnQuit  = new classBoutons("btnQuit");
+        btnStart = new classBoutons("btnStart");
+        btnQuit  = new classBoutons("btnQuit");
 
-    btnStart.createElement();
-    btnQuit.createElement();
+        btnStart.createElement();
+        btnQuit.createElement();
 
-    btnStart.set("START", function(){jeu.start(); });
-    btnQuit.set("QUIT", function(){jeu.quit(); });
+        btnStart.set("START", function(){jeu.start(); });
+        btnQuit.set("QUIT", function(){jeu.quit(); });
 
-}
+    }
