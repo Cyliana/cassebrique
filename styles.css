@@ -134,7 +134,7 @@ body
     border-radius: 50%;
     background: radial-gradient(at 4px 4px, #ffffff, #333333);
     box-shadow: 5px 5px 15px, 0px 0px 2px inset;
-    transition: all 0.010 ease;
+    transition: all 0.010s ease;
 }
 
 .batte
@@ -147,5 +147,4 @@ body
     border-radius: 10px;
     background: lightgrey;                
     box-shadow: 5px 5px 15px, 0px -2px 8px inset, 0px 0px 1px inset;
-    transition: all 3 ease;
 }

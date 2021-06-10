@@ -25,9 +25,9 @@ class classJeu
         this.arene.createElement();
         this.arene.open();
 
-        //this.arene.mur.loadLevel(this.niveau);
-        //this.arene.mur.createWall();
-        //this.batte.createElement();
+        this.arene.mur.loadLevel(this.niveau);
+        this.arene.mur.createWall();
+        this.arene.batte.createElement();
     }
     
 

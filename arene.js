@@ -11,10 +11,11 @@ class classArene
         this.w          = 0;
         this.h          = 0;
 
-        /*this.mur        = new classMur();
+        this.mur        = new classMur();
+
         this.batte      = new classBatte();
         
-        this.balles     = new Array(3);
+        /*this.balles     = new Array(3);
         this.balles[0]  = new classBall(0);
         this.balles[1]  = new classBall(1);
         this.balles[2]  = new classBall(2);
@@ -33,6 +34,7 @@ class classArene
         div.style.width = this.w;
         div.style.height = this.h;
         document.getElementById("logo").after(div);
+        div.onclick = jeu.arene.batte.startListenMouse();
     }
 
     open()
