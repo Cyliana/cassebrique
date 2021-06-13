@@ -14,19 +14,12 @@ class classArene
         this.mur        = new classMur();
 
         this.batte      = new classBatte();
-        
-        /*this.balles     = new Array(3);
+
+        this.balles     = new Array(3);
         this.balles[0]  = new classBall(0);
         this.balles[1]  = new classBall(1);
         this.balles[2]  = new classBall(2);
-
-        this.mur.parent = this;
-        this.batte.parent = this;
-        this.balles[0].parent = this;
-        this.balles[1].parent = this;
-        this.balles[2].parent = this;*/
     }
-
     createElement()
     {
         let div = document.createElement("div");
@@ -42,7 +35,7 @@ class classArene
         btnStart.disable();
         btnQuit.disable();
 
-        btnStart.set("NEW GAME", function(){});
+        btnStart.set("NEW GAME", function(){jeu.newGame();});
         btnQuit.set("HOME",function(){jeu.arene.close(); });
 
         document.getElementById("arene").style.display = "block" ;

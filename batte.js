@@ -43,7 +43,7 @@ class classBatte
 
     move(e)
     {
-        console.log("x:" +e.clientX + " / " + e.clientY);
+        //console.log("x:" +e.clientX + " / " + e.clientY);
         let bcr = parseInt(document.getElementById("arene").getBoundingClientRect().left);
         this.x1 = e.clientX - bcr - 40;
 

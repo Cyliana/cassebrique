@@ -6,7 +6,7 @@ class classBrique
 {
     constructor(id,x,y,c)
     {
-        console.log(id +" : "+ x +", "+ y );
+       // console.log(id +" : "+ x +", "+ y );
         this.x = x;
         this.y = y;
         this.w = 40;
@@ -28,7 +28,7 @@ class classBrique
     createElement()
     {
         let brique = document.createElement("div");
-        brique.id = "brique"+ this.id;
+        brique.id = "brique" + this.id;
         brique.className = "brique b"+ this.c ;
         brique.style.position = "absolute";
         brique.style.left = this.x +"px";
