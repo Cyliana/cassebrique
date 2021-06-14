@@ -12,10 +12,9 @@ class classArene
         this.h          = 0;
 
         this.mur        = new classMur();
-
         this.batte      = new classBatte();
 
-        this.balles     = new Array(3);
+        this.balles     = new Array();
         this.balles[0]  = new classBall(0);
         this.balles[1]  = new classBall(1);
         this.balles[2]  = new classBall(2);
@@ -35,7 +34,7 @@ class classArene
         btnStart.disable();
         btnQuit.disable();
 
-        btnStart.set("NEW GAME", function(){jeu.newGame();});
+        btnStart.set("NEW GAME", function(){jeu.start();});
         btnQuit.set("HOME",function(){jeu.arene.close(); });
 
         document.getElementById("arene").style.display = "block" ;

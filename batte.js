@@ -5,24 +5,22 @@
 class classBatte
 {
     name;
-    isMoving;
     w;
     y;
     x1;
     x2;
     ox;
+    
 
     constructor()
     {
         this.name       = "batte";
 
-        this.isMoving   = false;
-
         this.w          = 80 ;
         this.y          = 460 ;
 
         this.x1         = 0;
-        this.x2         = this.x + this.w ;
+        this.x2         = this.x1 + this.w ;
         this.ox         = this.x1 ;
     }
 
@@ -31,6 +29,7 @@ class classBatte
         let batte = document.createElement("div");
         batte.id = "batte";
         batte.className = "batte";
+        batte.style.position = "absolute";
         batte.style.top = this.y + "px";
         batte.style.left = this.x1 + "px";
         document.getElementById("arene").appendChild(batte);
@@ -38,27 +37,41 @@ class classBatte
 
     startListenMouse()
     {
-        document.onmousemove = function(e) { jeu.arene.batte.move(e); } ;
-    }
-
-    move(e)
-    {
-        //console.log("x:" +e.clientX + " / " + e.clientY);
         let bcr = parseInt(document.getElementById("arene").getBoundingClientRect().left);
-        this.x1 = e.clientX - bcr - 40;
+            document.onmousemove = function (e) { 
+            this.x1 = e.clientX- bcr - 40;
+            jeu.arene.batte.move();}
+    }
+    
+    move()
+    {
+        console.log("batte.move");
 
-        if(this.x1 <0)
+        if(jeu.demoMode == true)
         {
-            this.x1 = 0 ;
+            this.x1 = jeu.arene.balles[0].x - 40 ;
         }
         
-        if(this.x1 > 520 - this.w)
         {
-            this.x1 = 520 -this.w ; 
+            
+            if(this.x1 < 0)
+            {
+                this.x1 = 0;
+            }
+
+            if(this.x1 > 520 - this.w)
+            {
+                this.x1 = 520 - this.w;
+            }
         }
-
-        this.x2 = this.x1 + this.w ;
-
-        document.getElementById("batte").style.left = this.x1 + "px" ;
+            this.x2 = this.x1 + this.w;
+            document.getElementById("batte").style.left = this.x1 + "px"; 
     }
+
+    go()
+    {
+        setInterval("jeu.arene.batte.move();",10);
+    }
+
 }
+

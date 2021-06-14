@@ -28,14 +28,10 @@ class classJeu
         this.arene.mur.loadLevel(this.niveau);
         this.arene.mur.createWall();
         this.arene.batte.createElement();
-        this.arene.balles[0].createElement(0);
-        this.arene.balles[1].createElement(1);
-        this.arene.balles[2].createElement(2);
-
-        // this.arene.balles[0].go();
-        // this.arene.balles[1].go();
-        // this.arene.balles[2].go();
-        
+        this.arene.balles[0].createElement();
+        //this.arene.balles[1].createElement();
+        //this.arene.balles[2].createElement();
+        this.demoStart();
     }
     
 
@@ -46,14 +42,26 @@ class classJeu
 
     newGame()
     {
-        setTimeout("jeu.arene.balles[0].go()",0 * 500);
-        setTimeout("jeu.arene.balles[1].go()",1 * 1500);
-        setTimeout("jeu.arene.balles[2].go()",2 * 2000);
+        if(this.demoMode = true)
+        {
+            this.demoMode = false;
+            clearInterval(jeu.arene.batte.go());
+            this.start();
+        }
+      
+        
+        /*for( let i =0 ; i < 1 ; i++)
+        {
+            setTimeout("jeu.arene.balles["+i+"].go()",i * 3000);
+        }*/
+        
     } 
 
     demoStart()
-    {
 
+    {
+        jeu.arene.balles[0].go();
+        jeu.arene.batte.go();
     }
 
     countDown()

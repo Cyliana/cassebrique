@@ -4,6 +4,13 @@
 
 class classBall
 {
+    name;
+    id;
+    isMoving;
+    fixed;
+    xs;
+    ys;
+
     constructor(id)
     {
         this.name       = "balle";  
@@ -14,7 +21,7 @@ class classBall
         this.fixed      = true ;
         
         this.x          = 250;
-        this.y          = 440;
+        this.y          = 445;
 
         this.xs         = 1 ;
         this.ys         = 2 ;
@@ -25,37 +32,51 @@ class classBall
         console.log("jeu.arene.balles["+this.id+"].createElement()");
 
         let balle = document.createElement("div");
+        balle.id = "balle" + this.id;
         balle.className = "balle";
         balle.style.position = "absolute";
         balle.style.left = this.x + "px";
-        balle.id = "balle" + this.id;
         balle.style.top = this.y + "px";
         document.getElementById("arene").appendChild(balle);
     }
 
     move()
     {
-        if(this.x <7 || this.x > 513)
-        {
-            this.xs = this.xs * -1;
-        }
-        this.x = this.x + this.xs
 
-        if(this.y < 7 || this.y > 513)
+        if(this.isMoving == false)
         {
-            this.ys = this.ys * -1;
-        }
-        this.y = this.y + this.ys;
+            this.isMoving = true;
 
-        document.getElementById("balle"+this.id).style.left = (this.x - 7) + "px";
-        document.getElementById("balle"+this.id).style.top  = (this.y - 7) + "px";
-    
-       
+                if(this.x < 7 || this.x > 513)
+                {
+                    this.xs = this.xs * -1;
+                }
+                this.x = this.x + this.xs;
+
+                if(this.y < 7 || this.y > 513)
+                {
+                    this.ys = this.ys * -1;
+                }
+
+            this.y = this.y + this.ys; 
+
+            this.moveTo(this.x, this.y);
+
+            this.isMoving = false;
+
+
+            if(this.y > 450 && this.x > jeu.arene.batte.x1 && this.x < jeu.arene.batte.x1 + 80)
+            {
+                this.ys = this.ys * - 1 ;
+            }
+
+        }
     }
 
     moveTo(x,y)
     {
-        
+        document.getElementById("balle"+this.id).style.left = (this.x - 7) + "px";
+        document.getElementById("balle"+this.id).style.top  = (this.y - 7) + "px";
     }
 
     setOnClickEvent()
@@ -75,7 +96,7 @@ class classBall
 
     go()
     {
-        setInterval("jeu.arene.balles["+this.id+"].move();",20);    
+        setInterval("jeu.arene.balles["+this.id+"].move();",5);    
     } 
 
     stop()

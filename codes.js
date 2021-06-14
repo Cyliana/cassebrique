@@ -65,5 +65,4 @@ class classBoutons
 
         btnStart.set("START", function(){jeu.start(); });
         btnQuit.set("QUIT", function(){jeu.quit(); });
-
     }
