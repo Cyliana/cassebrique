@@ -34,7 +34,7 @@ class classArene
         btnStart.disable();
         btnQuit.disable();
 
-        btnStart.set("NEW GAME", function(){jeu.start();});
+        btnStart.set("NEW GAME", function(){jeu.newGame();});
         btnQuit.set("HOME",function(){jeu.arene.close(); });
 
         document.getElementById("arene").style.display = "block" ;

@@ -41,20 +41,19 @@ class classJeu
     }
 
     newGame()
-    {
-        if(this.demoMode = true)
-        {
-            this.demoMode = false;
-            clearInterval(jeu.arene.batte.go());
-            this.start();
-        }
-      
+    {        
+        console.log("new.game");
+
+        this.demoMode = false;
+        clearInterval(jeu.arene.batte.run);
+        jeu.arene.batte.startListenMouse();
+        jeu.countDown();
         
         /*for( let i =0 ; i < 1 ; i++)
-        {
-            setTimeout("jeu.arene.balles["+i+"].go()",i * 3000);
-        }*/
-        
+            {
+                setTimeout("jeu.arene.balles["+i+"].go()",i * 3000);
+            }
+        */
     } 
 
     demoStart()
@@ -66,7 +65,20 @@ class classJeu
 
     countDown()
     {
-   
+        /*let div = document.createElement("div");
+        div.id = "msg";
+        div.className = "msg";
+        document.getElementById("arene").appendChild(div);
+
+
+        var timeleft = 3;
+        var downloadTimer = setInterval(function(){
+        if(timeleft <= 0){
+            clearInterval(downloadTimer);
+        }
+        document.getElementById("msg").value = 3 - timeleft;
+        timeleft -= 1;
+        }, 1000);*/
     }
 
 }

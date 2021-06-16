@@ -10,7 +10,7 @@ class classBall
     fixed;
     xs;
     ys;
-
+    i;
     constructor(id)
     {
         this.name       = "balle";  
@@ -65,11 +65,22 @@ class classBall
             this.isMoving = false;
 
 
-            if(this.y > 450 && this.x > jeu.arene.batte.x1 && this.x < jeu.arene.batte.x1 + 80)
-            {
-                this.ys = this.ys * - 1 ;
-            }
+                if(this.y > 450 && this.x > jeu.arene.batte.x1 && this.x < jeu.arene.batte.x1 + 80)
+                {
+                    this.ys = this.ys * - 1 ;
+                }
+            
 
+//== COLLISIONS AVEC LES BRIQUES ========================================================
+            
+                for( let i = 0 ; i < 234; i++)
+                {
+                    if(( this.x > jeu.arene.mur.briques[i].x1 && this.x < jeu.arene.mur.briques[i].x2) && (this.y > jeu.arene.mur.briques[i].y1 && this.y < jeu.arene.mur.briques[i].y2))
+                    {
+                        this.ys = this.ys * - 1 ;
+                    }
+                }
+            
         }
     }
 
@@ -96,7 +107,7 @@ class classBall
 
     go()
     {
-        setInterval("jeu.arene.balles["+this.id+"].move();",5);    
+        setInterval("jeu.arene.balles["+this.id+"].move();",10);    
     } 
 
     stop()

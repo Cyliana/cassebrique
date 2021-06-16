@@ -4,6 +4,8 @@
 
 class classMur
 {
+    briques;
+
     constructor()
     {
         this.name       = "mur";
@@ -34,14 +36,18 @@ class classMur
     createWall()
     {
 
-        let briques = new Array();
+        this.briques = new Array(234);
         let i = 0;
 
         for( let y = 0 ; y < 18 ; y++)
         {
             for( let x = 0 ; x < 13 ; x++)
             {
-                briques[i] = new classBrique(i,x*40,y*20,this.level.substring(i, i + 1));     
+                let x1 = x*40 ;
+                let y1 = y*20 ;
+                let x2 = x1 + 40;
+                let y2 = y1 + 20 ; 
+                this.briques[i] = new classBrique(i,x1,y1,x2,y2,this.level.substring(i, i + 1));     
                 i++;
             }
         }

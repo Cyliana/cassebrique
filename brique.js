@@ -4,25 +4,22 @@
 
 class classBrique
 {
-    constructor(id,x,y,c)
+    constructor(id,x1,y1,x2,y2,c)
     {
        // console.log(id +" : "+ x +", "+ y );
-        this.x = x;
-        this.y = y;
+        this.x1 = x1;
+        this.y1 = y1;
         this.w = 40;
         this.h = 20;
         this.c = c;
         this.id = id;
-
+        this.x2 = x2 ;
+        this.y2 = y2 ;
         //this.t = t;
 
         this.createElement();
-    }
 
-    updateXY2()
-    {
-        this.x2 = this.x + this.w ;
-        this.y2 = this.y + this.h ;
+
     }
 
     createElement()
@@ -31,8 +28,8 @@ class classBrique
         brique.id = "brique" + this.id;
         brique.className = "brique b"+ this.c ;
         brique.style.position = "absolute";
-        brique.style.left = this.x +"px";
-        brique.style.top = this.y +"px";
+        brique.style.left = this.x1 +"px";
+        brique.style.top = this.y1 +"px";
         document.getElementById("arene").appendChild(brique);
     }   
 }

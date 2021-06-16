@@ -10,7 +10,7 @@ class classBatte
     x1;
     x2;
     ox;
-    
+    run;
 
     constructor()
     {
@@ -37,9 +37,11 @@ class classBatte
 
     startListenMouse()
     {
+        console.log("startListenMove()");
+
         let bcr = parseInt(document.getElementById("arene").getBoundingClientRect().left);
             document.onmousemove = function (e) { 
-            this.x1 = e.clientX- bcr - 40;
+            jeu.arene.batte.x1 = e.clientX- bcr - 40;
             jeu.arene.batte.move();}
     }
     
@@ -52,25 +54,23 @@ class classBatte
             this.x1 = jeu.arene.balles[0].x - 40 ;
         }
         
+        if(this.x1 < 0)
         {
-            
-            if(this.x1 < 0)
-            {
-                this.x1 = 0;
-            }
-
-            if(this.x1 > 520 - this.w)
-            {
-                this.x1 = 520 - this.w;
-            }
+            this.x1 = 0;
         }
+
+        if(this.x1 > 520 - this.w)
+        {
+            this.x1 = 520 - this.w;
+        }
+    
             this.x2 = this.x1 + this.w;
             document.getElementById("batte").style.left = this.x1 + "px"; 
     }
 
     go()
     {
-        setInterval("jeu.arene.batte.move();",10);
+        this.run = setInterval("jeu.arene.batte.move();",10);
     }
 
 }
