@@ -15,9 +15,9 @@ class classArene
         this.batte      = new classBatte();
 
         this.balles     = new Array();
-        this.balles[0]  = new classBall(0);
-        this.balles[1]  = new classBall(1);
-        this.balles[2]  = new classBall(2);
+        this.balles[0]  = new classBall();
+        //this.balles[1]  = new classBall();
+        //this.balles[2]  = new classBall();
     }
     createElement()
     {

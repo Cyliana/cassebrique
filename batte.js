@@ -37,17 +37,19 @@ class classBatte
 
     startListenMouse()
     {
-        console.log("startListenMove()");
+        //console.log("startListenMove()");
 
         let bcr = parseInt(document.getElementById("arene").getBoundingClientRect().left);
-            document.onmousemove = function (e) { 
+            document.onmousemove = function (e) 
+            
+            { 
             jeu.arene.batte.x1 = e.clientX- bcr - 40;
             jeu.arene.batte.move();}
-    }
+            }
     
     move()
     {
-        console.log("batte.move");
+        //console.log("batte.move");
 
         if(jeu.demoMode == true)
         {

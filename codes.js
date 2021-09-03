@@ -37,13 +37,13 @@ class classBoutons
     }
 
 }
- let btnStart;
- let btnQuit;
- let jeu;
- let log;
- let boutons;
+    let btnStart;
+    let btnQuit;
+    let jeu;
+    let log;
+    let boutons;
 
- 
+    
     function init()
     {
         jeu = new classJeu();

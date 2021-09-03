@@ -36,7 +36,7 @@ class classMur
     createWall()
     {
 
-        this.briques = new Array(234);
+        this.briques = new Array();
         let i = 0;
 
         for( let y = 0 ; y < 18 ; y++)
@@ -53,18 +53,12 @@ class classMur
         }
     }
 
-    resetWall()
+    resetWall(niveau)
     {
 
-
-        let el = document.getElementById("brique"+ brique.id);
-        el.remove(el);
-        
-        this.brique.c = '_';
-
+        delete this.briques;
 
         this.loadLevel(niveau);
         this.createWall();
     }
-    
 }

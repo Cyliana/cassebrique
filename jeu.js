@@ -1,9 +1,12 @@
 //===============================================
 //== JEU ========================================
 //===============================================
+let dcpt = 3;
 
 class classJeu
 {
+    
+
     constructor()
     {
         this.name        = "jeu";
@@ -42,99 +45,49 @@ class classJeu
 
     newGame()
     {        
-        console.log("new.game");
+        //console.log("new.game");
 
         this.demoMode = false;
+        clearInterval(jeu.arene.balles[0].run);
+        document.getElementById("balle"+this.id).style.left = 250 + "px" ;
+        document.getElementById("balle"+this.id).style.top = 445 + "px" ;
         clearInterval(jeu.arene.batte.run);
+        document.getElementById("batte").style.left = 220 + "px" ;
+        document.getElementById("batte").style.top = 460 + "px" ;
         jeu.arene.batte.startListenMouse();
+
         jeu.countDown();
-        
-        /*for( let i =0 ; i < 1 ; i++)
-            {
-                setTimeout("jeu.arene.balles["+i+"].go()",i * 3000);
-            }
-        */
     } 
+
 
     demoStart()
 
     {
-        jeu.arene.balles[0].go();
-        jeu.arene.batte.go();
+        setTimeout("jeu.arene.balles[0].go();",5000);
+        setTimeout("jeu.arene.batte.go();",5000);
     }
 
     countDown()
     {
-        /*let div = document.createElement("div");
+
+        this.arene.mur.resetWall(this.niveau);
+
+        btnStart.disable();
+        btnQuit.disable();
+
+        let div = document.createElement("div");
         div.id = "msg";
         div.className = "msg";
         document.getElementById("arene").appendChild(div);
 
+        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",1000);
+        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",2000);
+        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",3000);
+        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",4000);
+        setTimeout("document.getElementById('msg').style.display = 'none'",5000);
 
-        var timeleft = 3;
-        var downloadTimer = setInterval(function(){
-        if(timeleft <= 0){
-            clearInterval(downloadTimer);
-        }
-        document.getElementById("msg").value = 3 - timeleft;
-        timeleft -= 1;
-        }, 1000);*/
+        setTimeout('btnStart.enable();',4500);
+        setTimeout('btnQuit.enable();',4500);
+
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
