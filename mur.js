@@ -55,6 +55,16 @@ class classMur
 
     resetWall()
     {
+
+
+        let el = document.getElementById("brique"+ brique.id);
+        el.remove(el);
         
+        this.brique.c = '_';
+
+
+        this.loadLevel(niveau);
+        this.createWall();
     }
+    
 }
