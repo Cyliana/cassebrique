@@ -26,6 +26,8 @@ class classBall
     i;
     dy;
     run;
+
+
     constructor(id)
     {
         this.name       = "balle";  
@@ -44,7 +46,7 @@ class classBall
 
     createElement()
     {
-        //console.log("jeu.arene.balles["+this.id+"].createElement()");
+        console.log("jeu.arene.balles["+this.id+"].createElement()");
 
         let balle = document.createElement("div");
         balle.id = "balle" + this.id;
@@ -61,7 +63,6 @@ class classBall
         {
             this.isMoving = true;
 
-       
             let dy = this.y + this.ys;
             let dx = this.x + this.xs;
 
@@ -122,7 +123,7 @@ class classBall
 
                         //console.log("collision diag:" + collision);
                     }
-
+                    // condition de collision 
                     if(collision)
                     {
                         //this.parent.parent.playFX(7);
@@ -170,8 +171,7 @@ class classBall
                 if(dy > 540)
                 {
 
-                    console.log('game over : '+dy);
-
+                    //console.log('game over : '+dy);
 
                     this.stop();
                     this.moveTo((batte.x + (batte.w / 2)), (batte.y - 7));
@@ -203,7 +203,7 @@ class classBall
         }
         else
         {
-        //            console.log("balle" + this.id + " is not moving");
+        // console.log("balle" + this.id + " is not moving");
         }
     }
 
@@ -225,7 +225,7 @@ class classBall
 
     reset()
     {
-
+        
     }
 
     go()

@@ -48,13 +48,19 @@ class classJeu
         //console.log("new.game");
 
         this.demoMode = false;
+
         clearInterval(jeu.arene.balles[0].run);
-        document.getElementById("balle"+this.id).style.left = 250 + "px" ;
-        document.getElementById("balle"+this.id).style.top = 445 + "px" ;
+        document.getElementById("balle0").style.left = 250 + "px" ;
+        document.getElementById("balle0").style.top = 445 + "px" ;
+        
         clearInterval(jeu.arene.batte.run);
         document.getElementById("batte").style.left = 220 + "px" ;
         document.getElementById("batte").style.top = 460 + "px" ;
+
         jeu.arene.batte.startListenMouse();
+
+        //coller la balle à la batte
+        //lancer la balle au clic
 
         jeu.countDown();
     } 
@@ -69,7 +75,6 @@ class classJeu
 
     countDown()
     {
-
         this.arene.mur.resetWall(this.niveau);
 
         btnStart.disable();
@@ -84,10 +89,13 @@ class classJeu
         setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",2000);
         setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",3000);
         setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",4000);
-        setTimeout("document.getElementById('msg').style.display = 'none'",5000);
+        setTimeout("document.getElementById('msg').innerHTML = 'GO!';",5000);
+        setTimeout("document.getElementById('msg').style.display = 'none'",6000);
 
         setTimeout('btnStart.enable();',4500);
         setTimeout('btnQuit.enable();',4500);
+
+        
 
     }
 }

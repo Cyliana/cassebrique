@@ -29,7 +29,7 @@ body
     width: 0px;
     height: 0px;
     box-sizing: content-box;
-    background: url(bg01.jpg);
+    background:rgb(184, 139, 184);
     overflow: hidden;
     border: 1px solid red;
     box-shadow: 5px 5px 15px #333333 inset;

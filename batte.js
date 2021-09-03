@@ -44,8 +44,10 @@ class classBatte
             
             { 
             jeu.arene.batte.x1 = e.clientX- bcr - 40;
-            jeu.arene.batte.move();}
+            jeu.arene.batte.move();
             }
+    }
+            
     
     move()
     {
@@ -66,8 +68,9 @@ class classBatte
             this.x1 = 520 - this.w;
         }
     
-            this.x2 = this.x1 + this.w;
-            document.getElementById("batte").style.left = this.x1 + "px"; 
+        this.x2 = this.x1 + this.w;
+        
+        document.getElementById("batte").style.left = this.x1 + "px"; 
     }
 
     go()

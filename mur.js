@@ -57,17 +57,12 @@ class classMur
     {
         for(let i = 0 ; i < this.briques.length ; i++)
         {
-            let el = document.getElementById("brique"+i);
-            
-            //console.log(document.getElementById("brique"+i));
+            let el = document.getElementById("brique"+i)
             
             if(el)
             {   
-                console.log("je suis là!");
-
                 el.remove(); 
             }            
-            
         }
 
          this.loadLevel(niveau);
