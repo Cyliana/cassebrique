@@ -225,7 +225,19 @@ class classBall
 
     reset()
     {
-        
+                
+        if(jeu.demoMode == false)
+        {
+            if(this.x = jeu.arene.batte.x1)
+            {
+            this.x = this.x + this.xs;
+            document.getElementById("balle0").style.left = jeu.arene.batte.x1 + "px"; 
+            }
+            
+        }
+
+        console.log(this.x);
+    
     }
 
     go()

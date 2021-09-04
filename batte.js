@@ -49,7 +49,7 @@ class classBatte
     }
             
     
-    move()
+    move() // la batte synchronise ses mouvements sur celui de la balle.
     {
         //console.log("batte.move");
 

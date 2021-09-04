@@ -59,7 +59,7 @@ class classJeu
 
         jeu.arene.batte.startListenMouse();
 
-        //coller la balle à la batte
+        jeu.arene.balles[0].reset();
         //lancer la balle au clic
 
         jeu.countDown();
