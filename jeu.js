@@ -58,7 +58,9 @@ class classJeu
         document.getElementById("batte").style.top = 460 + "px" ;
 
         jeu.arene.batte.startListenMouse();
-        jeu.arene.balles[0].go()
+
+
+        setInterval("jeu.arene.balles[0].reset();",10);
         
         //lancer la balle au clic
 

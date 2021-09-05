@@ -229,10 +229,8 @@ class classBall
         if(jeu.demoMode == false) // (||la balle touche le bas de l'arène))
         {
             this.x = jeu.arene.batte.x1 - 40;
-            document.getElementById("balle0").style.left = jeu.arene.batte.x1 + "px"; 
+            document.getElementById("balle0").style.left = jeu.arene.batte.x1 + 40 + "px"; 
         }
-
-        console.log(this.x);
     }
 
     go()
