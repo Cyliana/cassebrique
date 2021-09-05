@@ -25,6 +25,7 @@ class classBall
     ys;
     i;
     dy;
+    
     run;
 
 
@@ -224,20 +225,14 @@ class classBall
     }
 
     reset()
-    {
-                
-        if(jeu.demoMode == false)
+    {        
+        if(jeu.demoMode == false) // (||la balle touche le bas de l'arène))
         {
-            if(this.x = jeu.arene.batte.x1)
-            {
-            this.x = this.x + this.xs;
+            this.x = jeu.arene.batte.x1 - 40;
             document.getElementById("balle0").style.left = jeu.arene.batte.x1 + "px"; 
-            }
-            
         }
 
         console.log(this.x);
-    
     }
 
     go()
