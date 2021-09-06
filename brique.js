@@ -18,8 +18,6 @@ class classBrique
         //this.t = t;
 
         this.createElement();
-
-
     }
 
     createElement()

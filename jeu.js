@@ -18,6 +18,7 @@ class classJeu
         this.difficulte  = 0;   
 
         this.demoMode    = true;
+        this.run;
     }
 
     start()
@@ -52,21 +53,19 @@ class classJeu
         clearInterval(jeu.arene.balles[0].run);
         document.getElementById("balle0").style.left = 250 + "px" ;
         document.getElementById("balle0").style.top = 445 + "px" ;
-        
+
         clearInterval(jeu.arene.batte.run);
         document.getElementById("batte").style.left = 220 + "px" ;
         document.getElementById("batte").style.top = 460 + "px" ;
-
-        jeu.arene.batte.startListenMouse();
-
-
-        setInterval("jeu.arene.balles[0].reset();",10);
         
-        //lancer la balle au clic
+        jeu.arene.batte.startListenMouse(); // batte suit la souris
 
-        jeu.countDown();
+        this.run = setInterval("jeu.arene.balles[0].reset();",5); //rafraîchissement de la balle pour qu'elle suive la batte.
+        
+        jeu.countDown();    // enclanchement compte à rebours
+
+        jeu.arene.balles[0].setOnClickEvent(); // lancement de la balle au clic
     } 
-
 
     demoStart()
 
@@ -96,8 +95,6 @@ class classJeu
 
         setTimeout('btnStart.enable();',4500);
         setTimeout('btnQuit.enable();',4500);
-
-        
 
     }
 }

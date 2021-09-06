@@ -171,11 +171,10 @@ class classBall
             {
                 if(dy > 540)
                 {
-
                     //console.log('game over : '+dy);
 
-                    this.stop();
-                    this.moveTo((batte.x + (batte.w / 2)), (batte.y - 7));
+                    this.reset();
+                    //this.moveTo((batte.x + (batte.w / 2)), (batte.y - 7));
                     this.setOnClickEvent();
 
                     this.ys = this.ys * -1;
@@ -216,7 +215,14 @@ class classBall
 
     setOnClickEvent()
     {
+        console.log("setOnClickEvent();");
 
+        document.getElementById("arene").onclick = function()
+        {
+            clearInterval(jeu.run); //on stoppe la synchronisation de la balle à la batte
+            jeu.arene.balles[0].go();
+        }
+      
     }
 
     onClickAction(id)
@@ -226,9 +232,11 @@ class classBall
 
     reset()
     {        
-        if(jeu.demoMode == false) // (||la balle touche le bas de l'arène))
+        console.log("reset()");
+
+        if(jeu.demoMode == false)
         {
-            this.x = jeu.arene.batte.x1 - 40;
+            this.x = jeu.arene.batte.x1 +40 ;
             document.getElementById("balle0").style.left = jeu.arene.batte.x1 + 40 + "px"; 
         }
     }
