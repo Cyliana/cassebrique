@@ -124,6 +124,8 @@ class classBall
 
                         //console.log("collision diag:" + collision);
                     }
+
+
                     // condition de collision 
                     if(collision)
                     {
@@ -169,15 +171,28 @@ class classBall
             }
             else
             {
-                if(dy > 540)
+                if(dy > 520)
                 {
-                    //console.log('game over : '+dy);
+                    console.log('game over :'+dy);
 
-                    this.reset();
-                    //this.moveTo((batte.x + (batte.w / 2)), (batte.y - 7));
+                    this.stop();
+                    document.getElementById("balle0").remove();
+                    this.createElement();
+                    jeu.run = setInterval("jeu.arene.balles[0].resetPos();",5);
                     this.setOnClickEvent();
+                    jeu.arene.vies--;
+                    document.getElementById("compteur").innerHTML = "Vies : " + jeu.arene.vies;
+                    
+                    if(jeu.arene.vies == 0)
+                    { 
+                        console.log("mes vies sont à 0 !");
+                        document.getElementById("msg").style.display = 'block';
+                        document.getElementById("msg").style.fontSize = "64px";
+                        document.getElementById('msg').innerHTML = 'GAME OVER!';
+                    }
+                       
 
-                    this.ys = this.ys * -1;
+
                 }
                 else
                 {
@@ -225,12 +240,7 @@ class classBall
       
     }
 
-    onClickAction(id)
-    {
-
-    }
-
-    reset()
+    resetPos()
     {        
         console.log("reset()");
 
@@ -248,7 +258,9 @@ class classBall
 
     stop()
     {
-
+        clearInterval(this.run);
+        this.x          = 250;
+        this.y          = 445;
     }
 
 }

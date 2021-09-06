@@ -60,7 +60,7 @@ class classJeu
         
         jeu.arene.batte.startListenMouse(); // batte suit la souris
 
-        this.run = setInterval("jeu.arene.balles[0].reset();",5); //rafraîchissement de la balle pour qu'elle suive la batte.
+        this.run = setInterval("jeu.arene.balles[0].resetPos();",5); //rafraîchissement de la balle pour qu'elle suive la batte.
         
         jeu.countDown();    // enclanchement compte à rebours
 
@@ -87,14 +87,14 @@ class classJeu
         document.getElementById("arene").appendChild(div);
 
         setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",1000);
+        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",1500);
         setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",2000);
-        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",3000);
-        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",4000);
-        setTimeout("document.getElementById('msg').innerHTML = 'GO!';",5000);
-        setTimeout("document.getElementById('msg').style.display = 'none'",6000);
+        setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",2500);
+        setTimeout("document.getElementById('msg').innerHTML = 'GO!';",3000);
+        setTimeout("document.getElementById('msg').style.display = 'none'",3500);
 
-        setTimeout('btnStart.enable();',4500);
-        setTimeout('btnQuit.enable();',4500);
+        setTimeout('btnStart.enable();',3500);
+        setTimeout('btnQuit.enable();',3500);
 
     }
 }

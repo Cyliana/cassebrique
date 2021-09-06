@@ -18,6 +18,9 @@ class classArene
         this.balles[0]  = new classBall(0);
         //this.balles[1]  = new classBall();
         //this.balles[2]  = new classBall();
+
+        this.vies       = 3;
+        
     }
     createElement()
     {
@@ -27,6 +30,12 @@ class classArene
         div.style.height = this.h;
         document.getElementById("logo").after(div);
         div.onclick = jeu.arene.batte.startListenMouse();
+
+        let divc = document.createElement("div");
+        divc.id = "compteur";
+        divc.innerHTML = "Vies : " + this.vies;
+        document.getElementById("arene").appendChild(divc);
+
     }
 
     open()

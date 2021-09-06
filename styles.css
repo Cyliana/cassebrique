@@ -147,3 +147,12 @@ body
     background: lightgrey;                
     box-shadow: 5px 5px 15px, 0px -2px 8px inset, 0px 0px 1px inset;
 }
+
+#compteur
+{
+    position: absolute;
+    top : 500px;
+    left : 10px;
+    font-size : 20px;
+
+}
