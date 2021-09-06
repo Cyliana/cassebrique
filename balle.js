@@ -189,6 +189,8 @@ class classBall
                         document.getElementById("msg").style.display = 'block';
                         document.getElementById("msg").style.fontSize = "64px";
                         document.getElementById('msg').innerHTML = 'GAME OVER!';
+                        jeu.arene.vies = 3;
+                        document.getElementById("compteur").innerHTML = "Vies : " + jeu.arene.vies;
                     }
                        
 
