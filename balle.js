@@ -25,9 +25,7 @@ class classBall
     ys;
     i;
     dy;
-    
     run;
-
 
     constructor(id)
     {
@@ -47,7 +45,7 @@ class classBall
 
     createElement()
     {
-        console.log("jeu.arene.balles["+this.id+"].createElement()");
+        //console.log("jeu.arene.balles["+this.id+"].createElement()");
 
         let balle = document.createElement("div");
         balle.id = "balle" + this.id;
@@ -173,29 +171,27 @@ class classBall
             {
                 if(dy > 520)
                 {
-                    console.log('game over :'+dy);
+                    //console.log('game over :'+dy);
 
                     this.stop();
-                    document.getElementById("balle0").remove();
-                    this.createElement();
-                    jeu.run = setInterval("jeu.arene.balles[0].resetPos();",5);
-                    this.setOnClickEvent();
+                    this.reset();
+                    jeu.arene.batte.reset()
                     jeu.arene.vies--;
                     document.getElementById("compteur").innerHTML = "Vies : " + jeu.arene.vies;
                     
                     if(jeu.arene.vies == 0)
                     { 
-                        console.log("mes vies sont à 0 !");
                         document.getElementById("msg").style.display = 'block';
-                        document.getElementById("msg").style.fontSize = "64px";
-                        document.getElementById('msg').innerHTML = 'GAME OVER!';
+                        document.getElementById("msg").style.fontSize = '64px';
+                        document.getElementById("msg").innerHTML = 'GAME OVER!';
                         jeu.arene.vies = 3;
                         document.getElementById("compteur").innerHTML = "Vies : " + jeu.arene.vies;
+                        setTimeout("document.getElementById('msg').style.display = 'none'",3000);
+                        setTimeout("jeu.resetGame();",3000);
                     }
-                       
-
-
                 }
+
+
                 else
                 {
                     // collision avec la batte
@@ -230,32 +226,32 @@ class classBall
         document.getElementById("balle"+this.id).style.top  = (this.y - 7) + "px";
     }
 
+
     setOnClickEvent()
     {
-        console.log("setOnClickEvent();");
+        //console.log("setOnClickEvent();");
 
-        document.getElementById("arene").onclick = function()
+            document.getElementById("arene").onclick = function() // hors contexte => chemin complet
         {
-            clearInterval(jeu.run); //on stoppe la synchronisation de la balle à la batte
-            jeu.arene.balles[0].go();
-        }
-      
-    }
 
-    resetPos()
-    {        
-        console.log("reset()");
+            jeu.stickMode = false;
+            jeu.arene.balles[0].stop();
+            jeu.arene.balles[0].go();  
 
-        if(jeu.demoMode == false)
-        {
-            this.x = jeu.arene.batte.x1 +40 ;
-            document.getElementById("balle0").style.left = jeu.arene.batte.x1 + 40 + "px"; 
+            //console.log("stickMode setonclick :" + jeu.stickMode);
         }
     }
+
 
     go()
     {
-        this.run = setInterval("jeu.arene.balles[0].move();",10);    
+        console.log("balles.go()");
+        {
+            console.log("interval de go()");
+            
+            this.run = setInterval("jeu.arene.balles[0].move();",10);
+        }
+            
     } 
 
     stop()
@@ -265,5 +261,14 @@ class classBall
         this.y          = 445;
     }
 
+
+    reset()
+    {
+        //console.log("reset de la balle");
+
+        document.getElementById("balle0").remove();
+        this.createElement();
+        this.setOnClickEvent();
+    }
 }
   

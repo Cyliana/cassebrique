@@ -43,9 +43,14 @@ class classBatte
             document.onmousemove = function (e) 
             
             { 
-            jeu.arene.batte.x1 = e.clientX- bcr - 40;
-            jeu.arene.batte.move();
+                if(jeu.demoMode == false)
+                {
+                    jeu.arene.batte.x1 = e.clientX- bcr - 40;
+                    jeu.arene.batte.move();    
+                }
+            
             }
+              
     }
             
     
@@ -67,16 +72,49 @@ class classBatte
         {
             this.x1 = 520 - this.w;
         }
-    
+
+        if(jeu.demoMode == false && jeu.stickMode == true)
+        {
+//          console.log("stickMode DANS MOVE() DE BALLE : " +jeu.stickMode)
+            jeu.arene.balles[0].x = this.x1 + 40;
+            jeu.arene.balles[0].y = this.y - 7;
+            jeu.arene.balles[0].moveTo(jeu.arene.balles[0].x,jeu.arene.balles[0].y);
+        }
+
         this.x2 = this.x1 + this.w;
         
         document.getElementById("batte").style.left = this.x1 + "px"; 
+
+
+
+        // jeu.arene.balles[0].x = this.x1 +40 ;
+        // document.getElementById("balle0").style.left = this.x1 + 40 + "px";
+                
+        //=======================================================================================      
     }
+
+
+
+
 
     go()
     {
         this.run = setInterval("jeu.arene.batte.move();",10);
     }
+    
+    stop()
+    {
+        clearInterval(this.run);
+        this.y          = 460;
+    }
+    
+    reset()
+    {
+        //console.log("reset de la batte");
 
+        document.getElementById("batte").remove();
+        this.createElement();
+        this.startListenMouse();
+    }
 }
 

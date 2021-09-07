@@ -18,6 +18,8 @@ class classJeu
         this.difficulte  = 0;   
 
         this.demoMode    = true;
+        this.stickMode   = false;
+
         this.run;
     }
 
@@ -49,6 +51,7 @@ class classJeu
         //console.log("new.game");
 
         this.demoMode = false;
+        
 
         clearInterval(jeu.arene.balles[0].run);
         document.getElementById("balle0").style.left = 250 + "px" ;
@@ -57,14 +60,14 @@ class classJeu
         clearInterval(jeu.arene.batte.run);
         document.getElementById("batte").style.left = 220 + "px" ;
         document.getElementById("batte").style.top = 460 + "px" ;
-        
-        jeu.arene.batte.startListenMouse(); // batte suit la souris
 
-        this.run = setInterval("jeu.arene.balles[0].resetPos();",5); //rafraîchissement de la balle pour qu'elle suive la batte.
+        this.arene.batte.startListenMouse(); // batte suit la souris
         
-        jeu.countDown();    // enclanchement compte à rebours
+        this.countDown();    // enclanchement compte à rebours
 
-        jeu.arene.balles[0].setOnClickEvent(); // lancement de la balle au clic
+        this.stickMode = true;
+
+        setTimeout("jeu.arene.balles[0].setOnClickEvent();",3500); // lancement de la balle au clic
     } 
 
     demoStart()
@@ -92,9 +95,20 @@ class classJeu
         setTimeout("document.getElementById('msg').innerHTML = dcpt; dcpt--;",2500);
         setTimeout("document.getElementById('msg').innerHTML = 'GO!';",3000);
         setTimeout("document.getElementById('msg').style.display = 'none'",3500);
+        dcpt = 3;
 
         setTimeout('btnStart.enable();',3500);
         setTimeout('btnQuit.enable();',3500);
 
+    }
+
+    resetGame()
+    {
+        //this.arene.mur.resetWall();
+        this.arene.balles[0].reset();
+        this.arene.batte.reset();
+        this.newGame();
+
+        //console.log("le jeu se relance");
     }
 }

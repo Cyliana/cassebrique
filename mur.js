@@ -65,7 +65,9 @@ class classMur
             }            
         }
 
-         this.loadLevel(niveau);
-         this.createWall();
+        // this.loadLevel(niveau);
+        this.createWall();
+
+//         console.log("reset du mur");
     }
 }
